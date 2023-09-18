@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.*;
 import java.lang.Math;
+import java.util.Random;
 
 public class Chapter4TextbookProblems {
     
@@ -222,15 +223,359 @@ public class Chapter4TextbookProblems {
         }
     }
 
-    public static void largestToSmallest()
+    public static void largestToSmallest() //come back too
     {
+        Scanner input = new Scanner(System.in);
+        int num, highest = 51, lowest = 49;
+
+        do 
+        {
+            System.out.print("Enter a series of integers (enter -99 when you're done): ");
+            num = input.nextInt();
+        } while(num != -99);
+        
+        if (num > highest)
+        {
+            System.out.println(num + " is the highest value");
+        }
+        else if (num < lowest)
+        {
+            System.out.println(num + " is the lowest value");
+        }
+    }
+
+    public static void celsiusToFahrenheit()
+    {
+        double fahrenheit, celsius;
+        final double conversion = 1.8;
+        System.out.print("Celsius:\t\tFahrenheit\n");
+
+        for (int i = 0; i < 20; i ++)
+        {
+            celsius = (i + 1);
+            fahrenheit = (conversion * celsius) + 32;
+            //System.out.println(celsius + "\t\t\t" + ((conversion * celsius) + 32));
+            System.out.printf("%.0f\t\t\t%.2f\n", celsius, ((conversion * celsius) + 32));
+        }
+    }
+
+    public static void barChart()
+    {
+        Scanner input = new Scanner(System.in);
+        double store1, store2, store3, store4, store5;
+
+        System.out.print("Enter todays sales for store 1: ");
+        store1 = input.nextDouble();
+        System.out.print("Enter todays sales for store 2: ");
+        store2 = input.nextDouble();
+        System.out.print("Enter todays sales for store 3: ");
+        store3 = input.nextDouble();
+        System.out.print("Enter todays sales for store 4: ");
+        store4 = input.nextDouble();
+        System.out.print("Enter todays sales for store 5: ");
+        store5 = input.nextDouble();
+
+        System.out.print("SALES BAR CHART\n");
+
+        store1 /= 100;
+        store2 /= 100;
+        store3 /= 100;
+        store4 /= 100;
+        store5 /= 100;
+
+        System.out.print("Store 1: ");
+
+        for (int i = 0; i < store1; i++)
+        {
+            System.out.print("* ");
+        }
+
+        System.out.print("Store 2: ");
+
+        for (int i = 0; i < store2; i++)
+        {
+            System.out.print("* ");
+        }
+        
+        System.out.print("Store 3: ");
+
+        for (int i = 0; i < store3; i++)
+        {
+            System.out.print("* ");
+        }
+
+        System.out.print("Store 4: ");
+
+        for (int i = 0; i < store4; i++)
+        {
+            System.out.print("* ");
+        }
+
+        System.out.print("Store 5: ");
+
+        for (int i = 0; i < store5; i++)
+        {
+            System.out.print("* ");
+        }
+    }
+
+    public static void fileHeadDisplay() throws IOException
+    {
+        Scanner input = new Scanner(System.in);
+        String fileName;
+        String names, friends;
+
+        PrintWriter outputFile = new PrintWriter("Names.txt");
+
+        System.out.println("Enter a list of names: ");
+
+        for (int i = 0; i < 5; i++)
+        {
+            names = input.nextLine();
+            outputFile.println(names);
+        }
+
+        outputFile.close();
+
+        Scanner inputFile = new Scanner(new File("Names.txt"));
+
+        for (int i = 0; i < 5; i++)
+        {
+            friends = inputFile.nextLine();
+            System.out.println(friends);
+        }
+
+        inputFile.close();
+    }
+
+    public static void lineNumbers() throws IOException
+    {
+        String fileName;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the name of a file: ");
+        fileName = input.nextLine();
+
+        Scanner inputFile = new Scanner(new File(fileName));
+
+        for (int i = 0; i < 5; i++)
+        {
+            String friends = inputFile.nextLine();
+            System.out.println((i + 1) + ". " + friends);
+        }
+
+        inputFile.close();
+    }
+
+    public static void uppercaseFileConverter() throws IOException
+    {
+        String fileName1, fileName2;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the name of a file you want to open: ");
+        fileName1 = input.nextLine();
+        System.out.print("Enter the name of a file you want to write to: ");
+        fileName2 = input.nextLine();
+
+        Scanner inputFile = new Scanner(new File(fileName1));
+        PrintWriter outputFile = new PrintWriter(fileName2);
+
+        for (int i = 0; i < 5; i++)
+        {
+            String friends = inputFile.nextLine();
+            outputFile.println(friends.toUpperCase());
+        }
+
+        outputFile.close();
+        inputFile.close();
+    }
+
+    public static void budgetAnalysis()
+    {
+        Scanner input = new Scanner(System.in);
+        double budget, expenses, totalExpenses = 0;
+
+        System.out.print("How much have you budgeted for the month? ");
+        budget = input.nextDouble();
+        System.out.println("Enter all of your expenses? (enter 0 when you're done)");
+
+        do 
+        {
+            expenses = input.nextDouble();
+            totalExpenses += expenses;
+        } while (expenses != 0);
+
+        if (totalExpenses > budget)
+        {
+            System.out.printf("You are over budget by $%.2f", totalExpenses - budget);
+        }
+        else
+        {
+            System.out.printf("You are over budget by $%.2f", budget - totalExpenses);
+        }
+    }
+
+    public static void randomNumberGuessingGame()
+    {   
+        Random randomNumbers = new Random();
+        Scanner input = new Scanner(System.in);
+        int guess;
+        int randomNum = randomNumbers.nextInt(100) + 1;
+
+        System.out.println("Guess the correct number: ");
+
+        do
+        {
+            guess = input.nextInt();
+            if (guess < randomNum)
+            {
+                System.out.println("Too low, try again.");
+            }
+            else if (guess > randomNum)
+            {
+                System.out.println("Too high, try again.");
+            }
+        } while (randomNum != guess);
+    }
+
+    public static void enhancedGuessingGame() 
+    {
+        Random randomNumbers = new Random();
+        Scanner input = new Scanner(System.in);
+        int guess, counter = 0;
+        int randomNum = randomNumbers.nextInt(100) + 1;
+
+        System.out.println("Guess the correct number: ");
+
+        do
+        {
+            guess = input.nextInt();
+            if (guess < randomNum)
+            {
+                System.out.println("Too low, try again.");
+            }
+            else if (guess > randomNum)
+            {
+                System.out.println("Too high, try again.");
+            }
+
+            counter++;
+        } while (randomNum != guess);
+
+        System.out.print("It took you " + counter + " times to guess the correct number.");
+    }
+
+    public static void ESPGame() //come back too
+    {
+        Random randomNumbers = new Random();
+        Scanner input = new Scanner(System.in);
+        int counter = 0;
+        String guess;
+
+        for (int i = 0; i < 10; i++)
+        {
+            int randomNum = randomNumbers.nextInt(4) + 1;
+
+            System.out.print("Enter the color that the computer has selected: ");
+            guess = input.nextLine();
+
+            
+            counter++;
+        }
+        
+        System.out.print("You guessed correctly " + counter + " times.");
         
     }
 
+    public static void squareDisplay()
+    {
+        Scanner input = new Scanner(System.in);
+        int number;
 
+        System.out.print("Enter a number: ");
+        number = input.nextInt();
 
+        for (int i = 0; i < number; i++)
+        {
+            for (int j = 0; j < number; j++)
+            {
+                System.out.print("X ");
+            }
+            System.out.println();
+        }
+    }
 
+    public static void diceGame()
+    {
+        Random randomNumbers = new Random();
+        Scanner input = new Scanner(System.in);
+        int counterCom = 0, counterUser = 0;
 
+        for (int i = 0; i < 10; i++)
+        {
+            int randomNumCom = randomNumbers.nextInt(6) + 1;
+            int randomNumUser = randomNumbers.nextInt(6) + 1;
+
+            if (randomNumCom > randomNumUser)
+            {
+                counterCom++;
+            }
+            else if (randomNumCom < randomNumUser)
+            {
+                counterUser++;
+            }
+            else if (randomNumCom == randomNumUser)
+            {
+                System.out.println("This round is a tie.");
+            }
+        }
+
+        if (counterCom > counterUser)
+        {
+            System.out.println("The computer is the grand winner.");
+        }
+        else if (counterCom < counterUser)
+        {
+            System.out.println("The user is the grand winner.");
+        }
+        else if (counterCom == counterUser)
+        {
+            System.out.println("Its a tie.");
+        }
+    }
+
+    public static void slotMachine()
+    {
+        Scanner input = new Scanner(System.in);
+        Random randomNumbers = new Random();
+        int randomNum;
+        String fruit;
+
+        System.out.print("How much amount do you want to enter in the slot machine? ");
+        double money = input.nextDouble();
+
+        for (int i = 0; i < 3; i++)
+        {
+            randomNum = randomNumbers.nextInt(5) + 0;
+            
+            switch (randomNum)
+            {
+            case 0: fruit = "cherries";
+                    break;
+            case 1: fruit = "oranges";
+                    break;
+            case 2: fruit = "plums";
+                    break;
+            case 3: fruit = "bells";
+                    break;
+            case 4: fruit = "melons";
+                    break;
+            case 5: fruit = "bars";
+                    break;
+            }
+        }
+        
+    }
 
 
 
@@ -254,6 +599,32 @@ public class Chapter4TextbookProblems {
         //System.out.println();
         //population();
         //System.out.println();
-        largestToSmallest();
+        //largestToSmallest();
+        //System.out.println();
+        //celsiusToFahrenheit();
+        //System.out.println();
+        //barChart();
+        //System.out.println();
+        //fileHeadDisplay();
+        //System.out.println();
+        //lineNumbers();
+        //System.out.println();
+        //uppercaseFileConverter();
+        //System.out.println();
+        //budgetAnalysis();
+        //System.out.println();
+        //randomNumberGuessingGame();
+        //System.out.println();
+        //enhancedGuessingGame();
+        //System.out.println();
+        //ESPGame();
+        //System.out.println();
+        //squareDisplay();
+        //System.out.println();
+        //diceGame();
+        //System.out.println();
+        slotMachine();
+        //System.out.println();
+
     }
 }
