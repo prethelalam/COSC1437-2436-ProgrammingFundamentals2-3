@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.io.*;
-import java.lang.Math;
 import java.util.Random;
 
 public class Chapter4TextbookProblems {
@@ -581,50 +580,50 @@ public class Chapter4TextbookProblems {
 
 
     public static void main(String[] args) throws IOException {
-        //sumOfNumbers();
-        //System.out.println();
-        //distanceTravelled();
-        //System.out.println();
-        //distanceFile();
-        //System.out.println();
-        //penniesForPay();
-        //System.out.println();
-        //letterCounter();
-        //System.out.println();
-        //fileLetterCounter();
-        //System.out.println();
-        //hotelOccupany();
-        //System.out.println();
-        //averageRainfall();
-        //System.out.println();
-        //population();
-        //System.out.println();
-        //largestToSmallest();
-        //System.out.println();
-        //celsiusToFahrenheit();
-        //System.out.println();
-        //barChart();
-        //System.out.println();
-        //fileHeadDisplay();
-        //System.out.println();
-        //lineNumbers();
-        //System.out.println();
-        //uppercaseFileConverter();
-        //System.out.println();
-        //budgetAnalysis();
-        //System.out.println();
-        //randomNumberGuessingGame();
-        //System.out.println();
-        //enhancedGuessingGame();
-        //System.out.println();
-        //ESPGame();
-        //System.out.println();
-        //squareDisplay();
-        //System.out.println();
-        //diceGame();
-        //System.out.println();
+        sumOfNumbers();
+        System.out.println();
+        distanceTravelled();
+        System.out.println();
+        distanceFile();
+        System.out.println();
+        penniesForPay();
+        System.out.println();
+        letterCounter();
+        System.out.println();
+        fileLetterCounter();
+        System.out.println();
+        hotelOccupany();
+        System.out.println();
+        averageRainfall();
+        System.out.println();
+        population();
+        System.out.println();
+        largestToSmallest();
+        System.out.println();
+        celsiusToFahrenheit();
+        System.out.println();
+        barChart();
+        System.out.println();
+        fileHeadDisplay();
+        System.out.println();
+        lineNumbers();
+        System.out.println();
+        uppercaseFileConverter();
+        System.out.println();
+        budgetAnalysis();
+        System.out.println();
+        randomNumberGuessingGame();
+        System.out.println();
+        enhancedGuessingGame();
+        System.out.println();
+        ESPGame();
+        System.out.println();
+        squareDisplay();
+        System.out.println();
+        diceGame();
+        System.out.println();
         slotMachine();
-        //System.out.println();
+        System.out.println();
 
     }
 }
