@@ -90,6 +90,75 @@ public class Chp5TextbookProblems {
         return distance;
     }
 
+    //6.************************************************************
+    public static double convertToCelsius(int fahrenheit)
+    {
+        double celsuis;
+
+        celsuis = 0.556 * (fahrenheit - 32);
+
+        return celsuis;
+    }
+
+    //7.************************************************************
+
+    public static double calcAverage(double test1, double test2, double test3, double test4, double test5)
+    {
+        double testAvg = (test1 + test2 + test3 + test4 + test5) / 5.0;
+
+        return testAvg;
+    }
+
+    public static char determineGrade(double average)
+    {
+        char letterGrade = 'F';
+
+        if (average >= 90)
+        {
+            letterGrade = 'A';
+        }
+        else if (average >= 80)
+        {
+            letterGrade = 'B';
+        }
+        else if (average >= 70)
+        {
+            letterGrade = 'C';
+        }
+        else if (average >= 60)
+        {
+            letterGrade = 'D';
+        }
+        else if (average < 60)
+        {
+            letterGrade = 'F';
+        }
+
+        return letterGrade;
+    }
+
+    //8.************************************************************
+
+    public static void showKilometers(double meters)
+    {
+        System.out.printf("%.0f Meters is %.2f Kilometers.\n", meters, meters * 0.001);
+        System.out.println();
+    }
+
+    public static void showInches(double meters)
+    {
+        System.out.printf("%.0f Meters is %.2f Inches.\n", meters, meters * 39.37);
+        System.out.println();
+    }
+
+    public static void showFeet(double meters)
+    {
+        System.out.printf("%.0f Meters is %.2f Feet.\n", meters, meters * 3.281);
+        System.out.println();
+    }
+
+
+
 
 
 
@@ -97,13 +166,12 @@ public class Chp5TextbookProblems {
 
 
     public static void main(String[] args) {
-        //1.
+        //1.*************************************************************************
 
         // showChar("New York", 2);
         // System.out.println();
 
-        // *************************************************************************
-        //2.
+        //2.*************************************************************************
 
         // Scanner input = new Scanner(System.in);
         
@@ -118,8 +186,7 @@ public class Chp5TextbookProblems {
 
         // System.out.printf("Retail price is: $%.2f", retailPrice);
 
-        //*************************************************************************
-        //3.
+        //3.*************************************************************************
 
         // double length,    // The rectangle's length
         //      width,     // The rectangle's width
@@ -137,8 +204,8 @@ public class Chp5TextbookProblems {
         // // Display the rectangle data.
         // displayData(length, width, area);
 
-        //*************************************************************************
-        //4.
+        //4.*************************************************************************
+
         // Scanner input = new Scanner(System.in);
         // int squareFeet;
         // double totalSquareFeet = 0.0;
@@ -169,17 +236,77 @@ public class Chp5TextbookProblems {
         // System.out.printf("The cost of labor is: $%.2f\n", laborCost);
         // System.out.printf("The total cost is: $%.2f\n", totalCost);
 
-        //*************************************************************************
-        //5.
-        int i;
-        double distance;
+        //5.*************************************************************************
 
-        for (i = 1; i <= 10; i++)
-        {
-            distance = fallingDistance((i));
+        // int i;
+        // double distance;
 
-            System.out.printf("At " + (i) + " second(s): %.2f meters\n", distance); 
-        }
+        // for (i = 1; i <= 10; i++)
+        // {
+        //     distance = fallingDistance((i));
+
+        //     System.out.printf("At " + (i) + " second(s): %.2f meters\n", distance); 
+        // }
         
+        //6.*************************************************************************
+
+        // int i;
+
+        // System.out.println("Celsius\t\tFahrenheit");
+        // System.out.println("---------------------------------------");
+
+        // for (i = 0; i <=20; i++)
+        // {
+        //     System.out.printf("%.2f\t\t%d\n",convertToCelsius(i), i);
+        // }
+
+        //7.*************************************************************************
+
+        // Scanner input = new Scanner(System.in);
+        
+        // System.out.println("Enter 5 test grades (follow each one with a space).");
+        // double exam1 = input.nextDouble();
+        // double exam2 = input.nextDouble();
+        // double exam3 = input.nextDouble();
+        // double exam4 = input.nextDouble();
+        // double exam5 = input.nextDouble();
+
+        // double average = calcAverage(exam1, exam2, exam3, exam4, exam5);
+        // char letterGrade = determineGrade(average);
+
+        // System.out.println("Your grade for the class is a " + letterGrade);
+
+        //7.*************************************************************************
+
+            Scanner input = new Scanner(System.in);
+            int choice;
+            double meters;
+
+            System.out.print("Enter a distance in meters: ");
+            meters = input.nextDouble();
+
+            do 
+            {
+                
+                System.out.println("1. Convert to kilometers\n2. Convert to inches\n3. Convert to feet\n4. Quit the Program\n");
+                System.out.print("Enter your choice: ");
+                choice = input.nextInt();
+
+                switch(choice)
+                {
+                    case 1: showKilometers(meters);
+                            break;
+                            
+
+                    case 2: showInches(meters);
+                            break;
+                            
+
+                    case 3: showFeet(meters);
+                            break;
+                            
+                    case 4: break;
+                }
+            } while (choice != 4);
     }
 }
