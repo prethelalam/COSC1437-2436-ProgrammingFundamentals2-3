@@ -157,7 +157,37 @@ public class Chp5TextbookProblems {
         System.out.println();
     }
 
+    //9.************************************************************
 
+    public static int getDistance(int speed, int time)
+    {   
+        return speed * time;
+    }
+
+    //10.************************************************************
+
+    public static void calcStockProfit(int NS, double PP, double PC, double SP, double SC)
+    {
+        double profit = ((NS * SP) - SC) - ((NS * PP) + PC);
+        System.out.printf("You profit is: $%.2f", profit);
+    }
+
+    //11.************************************************************
+
+    public static void calcStockProfits(int NS, double PP, double PC, double SP, double SC)
+    {
+        double profit = ((NS * SP) - SC) - ((NS * PP) + PC);
+        System.out.printf("You profit is: $%.2f\n", profit);
+    }
+
+    //12.************************************************************
+
+    public static double calcKineticEnergy(double mass, double velocity)
+    {
+        double kineticEnergy = (0.5 * mass * (Math.pow(velocity, 2)));
+
+        return kineticEnergy;
+    }
 
 
 
@@ -276,37 +306,106 @@ public class Chp5TextbookProblems {
 
         // System.out.println("Your grade for the class is a " + letterGrade);
 
-        //7.*************************************************************************
+        //8.*************************************************************************
+
+            // Scanner input = new Scanner(System.in);
+            // int choice;
+            // double meters;
+
+            // System.out.print("Enter a distance in meters: ");
+            // meters = input.nextDouble();
+
+            // do 
+            // {
+            //     System.out.println("1. Convert to kilometers\n2. Convert to inches\n3. Convert to feet\n4. Quit the Program\n");
+            //     System.out.print("Enter your choice: ");
+            //     choice = input.nextInt();
+
+            //     switch(choice)
+            //     {
+            //         case 1: showKilometers(meters);
+            //                 break;
+                            
+
+            //         case 2: showInches(meters);
+            //                 break;
+                            
+
+            //         case 3: showFeet(meters);
+            //                 break;
+                            
+            //         case 4: break;
+            //     }
+            // } while (choice != 4);
+
+            //9.*************************************************************************
+
+            // Scanner input = new Scanner(System.in);
+            // int speed, hours;
+
+            // do 
+            // {
+            //     System.out.print("Enter the speed of your vehicle and how many hours it has travelled: ");
+            //     speed = input.nextInt();
+            //     hours = input.nextInt();
+            // }
+            // while (speed <= 0 || hours <= 1);
+            
+            // int distanceTravelled = getDistance(speed, hours);
+
+            // System.out.print("You travelled " + distanceTravelled + " miles.\n");
+
+            //10.*************************************************************************
+
+            // Scanner input = new Scanner(System.in);
+
+            // System.out.print("Enter the number of shares purchased: ");
+            // int NS = input.nextInt();
+            // System.out.print("Enter the purchase price per share: ");
+            // double PP = input.nextDouble();
+            // System.out.print("Enter the purhcase commission paid: ");
+            // double PC = input.nextDouble();
+            // System.out.print("Enter the sale price per share: ");
+            // double SP = input.nextDouble();
+            // System.out.print("Enter the sale commission paid: ");
+            // double SC = input.nextDouble();
+
+            // calcStockProfit(NS, PP, PC, SP, SC);
+
+            //11.*************************************************************************
+
+            // Scanner input = new Scanner(System.in);
+
+            // System.out.print("How many stock profits do you want to calculate? ");
+            // int stockNum = input.nextInt();
+
+            // for (int i = 0; i < stockNum; i++)
+            // {
+            //     System.out.println("For stock " + (i + 1) + ":");
+            //     System.out.print("Enter the number of shares purchased: ");
+            //     int NS = input.nextInt();
+            //     System.out.print("Enter the purchase price per share: ");
+            //     double PP = input.nextDouble();
+            //     System.out.print("Enter the purhcase commission paid: ");
+            //     double PC = input.nextDouble();
+            //     System.out.print("Enter the sale price per share: ");
+            //     double SP = input.nextDouble();
+            //     System.out.print("Enter the sale commission paid: ");
+            //     double SC = input.nextDouble();
+
+            //     calcStockProfits(NS, PP, PC, SP, SC);
+            // }
+
+            //12.*************************************************************************
 
             Scanner input = new Scanner(System.in);
-            int choice;
-            double meters;
 
-            System.out.print("Enter a distance in meters: ");
-            meters = input.nextDouble();
+            System.out.print("Enter the mass and velocity of the object: ");
+            double mass = input.nextDouble();
+            double velocity = input.nextDouble();
 
-            do 
-            {
-                
-                System.out.println("1. Convert to kilometers\n2. Convert to inches\n3. Convert to feet\n4. Quit the Program\n");
-                System.out.print("Enter your choice: ");
-                choice = input.nextInt();
+            double kineticEnergy = calcKineticEnergy(mass, velocity);
 
-                switch(choice)
-                {
-                    case 1: showKilometers(meters);
-                            break;
-                            
-
-                    case 2: showInches(meters);
-                            break;
-                            
-
-                    case 3: showFeet(meters);
-                            break;
-                            
-                    case 4: break;
-                }
-            } while (choice != 4);
+            System.out.printf("The objects kinetic energy is %.2f\n", kineticEnergy);
     }
 }
