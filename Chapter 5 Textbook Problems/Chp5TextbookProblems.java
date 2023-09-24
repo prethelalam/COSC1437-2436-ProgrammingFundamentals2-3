@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.Random;
 
 public class Chp5TextbookProblems {
 
@@ -189,7 +190,56 @@ public class Chp5TextbookProblems {
         return kineticEnergy;
     }
 
+    //13.************************************************************
 
+    public static boolean findPrimeNum(int num)
+    {
+        boolean status;
+
+        double remainder = num % 2;
+
+        if (remainder != 0)
+        {
+            status = true;
+        }
+        else
+        {
+            status = false;
+        }
+
+        return status;
+    }
+
+    //14.************************************************************
+
+    //come back too
+
+    //15.************************************************************
+
+    public static boolean isEven(int num)
+    {
+        boolean status; 
+
+        if ((num % 2) == 0)
+        {
+            status = true;
+        }
+        else
+        {
+            status = false;
+        }
+
+        return status;
+    }
+
+    //16.************************************************************
+
+    public static double calcPV(double futureValue, int years, double rate)
+    {
+        double pv = futureValue / (Math.pow((1 + rate), years));
+
+        return pv;
+    }
 
 
 
@@ -398,14 +448,65 @@ public class Chp5TextbookProblems {
 
             //12.*************************************************************************
 
+            // Scanner input = new Scanner(System.in);
+
+            // System.out.print("Enter the mass and velocity of the object: ");
+            // double mass = input.nextDouble();
+            // double velocity = input.nextDouble();
+
+            // double kineticEnergy = calcKineticEnergy(mass, velocity);
+
+            // System.out.printf("The objects kinetic energy is %.2f\n", kineticEnergy);
+
+            //13.*************************************************************************
+
+            // Scanner input = new Scanner(System.in); //come back too
+
+            // System.out.print("Enter a number to see if it is a prime number: ");
+            // int number = input.nextInt();
+
+            // boolean status = findPrimeNum(number);
+
+            // if (status = true)
+            // {
+            //     System.out.println(number + " is a prime number");
+            // }
+            // else
+            // {
+            //     System.out.println(number + " is not a prime number");
+            // }
+            
+            //14.*************************************************************************
+
+            //come back too
+
+            //15.*************************************************************************
+
+            // Random randNum = new Random();
+            // int count = 0, randomNum;
+
+            // do
+            // {
+            //     randomNum = randNum.nextInt(100) + 1; 
+            //     System.out.println(randomNum + " is even: " + isEven(randomNum));
+            //     count++;
+            // } while (count < randomNum);
+
+            //17.*************************************************************************
+
             Scanner input = new Scanner(System.in);
+            System.out.print("What is your future value? ");
+            double fv = input.nextDouble();
+            System.out.print("How long will you let the money sit for? ");
+            int years = input.nextInt();
+            System.out.print("What is the annual interest rate? ");
+            double rate = input.nextDouble();
+            rate /= 100;
 
-            System.out.print("Enter the mass and velocity of the object: ");
-            double mass = input.nextDouble();
-            double velocity = input.nextDouble();
+            double pv = calcPV(fv, years, rate);
 
-            double kineticEnergy = calcKineticEnergy(mass, velocity);
+            System.out.printf("Your present value is: $%.2f", pv);
 
-            System.out.printf("The objects kinetic energy is %.2f\n", kineticEnergy);
+            //18.*************************************************************************
     }
 }
