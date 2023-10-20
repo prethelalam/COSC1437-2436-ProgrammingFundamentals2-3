@@ -60,29 +60,68 @@ public class Chapter6TextbookProblems {
 
     //number 5
     
+    // Scanner input = new Scanner(System.in);
+
+    // System.out.print("Enter the name of an employee: ");
+    // String name = input.nextLine();
+    // System.out.print("Enter the employees ID number: ");
+    // int IDNum = input.nextInt();
+    // System.out.print("Enter the employees pay rate: ");
+    // double pay = input.nextDouble();
+    // System.out.print("Enter the amount of hours the employee has worked: ");
+    // int hours = input.nextInt();
+
+    // Payroll employee = new Payroll(name, IDNum);
+    // employee.setPayRate(pay); //have to individually set since constructor doesnt have those parameters
+    // employee.setHours(hours);
+
+    // double grossPay = employee.getGrossPay();
+
+    // displayGrossPay(grossPay);
+
+    //*************************************************************************************************************
+
+    //number 6
+
+    // Scanner input = new Scanner(System.in);
+
+    // System.out.print("Enter your first test score 1: ");
+    // double test1 = input.nextDouble();
+    // System.out.print("Enter your first test score 2: ");
+    // double test2 = input.nextDouble();
+    // System.out.print("Enter your first test score 3: ");
+    // double test3 = input.nextDouble(); 
+
+    // TestScores examGrade = new TestScores(test1, test2, test3);
+
+    // System.out.printf("Your exam average is %.2f", examGrade.getAverage());
+
+    //*************************************************************************************************************
+
+    //number 7
+
+    // Scanner input = new Scanner(System.in);
+
+    // System.out.print("What is the circles radius? ");
+    // double radius = input.nextDouble();
+
+    // Circle circleData = new Circle(radius);
+
+    // displayCircleInformation(circleData);
+
+    //*************************************************************************************************************
+
+    //number 8
+
     Scanner input = new Scanner(System.in);
 
-    System.out.print("Enter the name of an employee: ");
-    String name = input.nextLine();
-    System.out.print("Enter the employees ID number: ");
-    int IDNum = input.nextInt();
-    System.out.print("Enter the employees pay rate: ");
-    double pay = input.nextDouble();
-    System.out.print("Enter the amount of hours the employee has worked: ");
-    int hours = input.nextInt();
+    System.out.print("What is the temperature in fahrenheit? ");
+    double temp = input.nextDouble();
 
-    Payroll employee = new Payroll(name, IDNum);
-    employee.setPayRate(pay); //have to individually set since constructor doesnt have those parameters
-    employee.setHours(hours);
+    Temperature fahrenheit = new Temperature(temp);
 
-    double grossPay = employee.getGrossPay();
-
-    displayGrossPay(grossPay);
-
-
-
-
-
+    displayCelsius(fahrenheit);
+    displayKelvin(fahrenheit);
 
 
     } //end of main method
@@ -142,5 +181,30 @@ public class Chapter6TextbookProblems {
     {
         System.out.printf("The employess gross pay is $%.2f", grossPay);
     }
+
+    //*************************************************************************************************************
+
+    //number 7
+    public static void displayCircleInformation(Circle circleInfo)
+    {
+        System.out.printf("The area of the circle is %.2f\n", circleInfo.getArea());
+        System.out.printf("The diameter of the circle is %.2f\n", circleInfo.getDiameter());
+        System.out.printf("The circumference of the circle is is %.2f\n", circleInfo.getCircumference());
+    }
+
+    //*************************************************************************************************************
+
+    //number 8
+    public static void displayCelsius(Temperature temp)
+    {
+        System.out.printf("The temperature in celsius is %.2f\n", temp.getCelsius());
+    }
+
+    public static void displayKelvin(Temperature temp)
+    {
+        System.out.printf("The temperature in kelvin is %.2f\n", temp.getKelvin());
+    }
+
+
 
 }
