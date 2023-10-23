@@ -43,88 +43,145 @@ public class Chapter6TextbookProblems {
 
     //number 4
 
-    // RetailItem item1 = new RetailItem("Jacket\t", 12, 59.99);
-    // RetailItem item2 = new RetailItem("Designer Jeans", 40, 34.95);
-    // RetailItem item3 = new RetailItem("Shirt\t", 20, 24.95);
+        // RetailItem item1 = new RetailItem("Jacket\t", 12, 59.99);
+        // RetailItem item2 = new RetailItem("Designer Jeans", 40, 34.95);
+        // RetailItem item3 = new RetailItem("Shirt\t", 20, 24.95);
 
-    // System.out.println("\t\tDescription:\t\tUnits on Hand\t\tPrice");
-    // System.out.println("----------------------------------------------------------------------");
-    // System.out.print("Item #1");
-    // displayClothingInfo(item1);
-    // System.out.print("Item #2");
-    // displayClothingInfo(item2);
-    // System.out.print("Item #3");
-    // displayClothingInfo(item3);
+        // System.out.println("\t\tDescription:\t\tUnits on Hand\t\tPrice");
+        // System.out.println("----------------------------------------------------------------------");
+        // System.out.print("Item #1");
+        // displayClothingInfo(item1);
+        // System.out.print("Item #2");
+        // displayClothingInfo(item2);
+        // System.out.print("Item #3");
+        // displayClothingInfo(item3);
 
     //*************************************************************************************************************
 
     //number 5
     
-    // Scanner input = new Scanner(System.in);
+        // Scanner input = new Scanner(System.in);
 
-    // System.out.print("Enter the name of an employee: ");
-    // String name = input.nextLine();
-    // System.out.print("Enter the employees ID number: ");
-    // int IDNum = input.nextInt();
-    // System.out.print("Enter the employees pay rate: ");
-    // double pay = input.nextDouble();
-    // System.out.print("Enter the amount of hours the employee has worked: ");
-    // int hours = input.nextInt();
+        // System.out.print("Enter the name of an employee: ");
+        // String name = input.nextLine();
+        // System.out.print("Enter the employees ID number: ");
+        // int IDNum = input.nextInt();
+        // System.out.print("Enter the employees pay rate: ");
+        // double pay = input.nextDouble();
+        // System.out.print("Enter the amount of hours the employee has worked: ");
+        // int hours = input.nextInt();
 
-    // Payroll employee = new Payroll(name, IDNum);
-    // employee.setPayRate(pay); //have to individually set since constructor doesnt have those parameters
-    // employee.setHours(hours);
+        // Payroll employee = new Payroll(name, IDNum);
+        // employee.setPayRate(pay); //have to individually set since constructor doesnt have those parameters
+        // employee.setHours(hours);
 
-    // double grossPay = employee.getGrossPay();
+        // double grossPay = employee.getGrossPay();
 
-    // displayGrossPay(grossPay);
+        // displayGrossPay(grossPay);
 
     //*************************************************************************************************************
 
     //number 6
 
-    // Scanner input = new Scanner(System.in);
+        // Scanner input = new Scanner(System.in);
 
-    // System.out.print("Enter your first test score 1: ");
-    // double test1 = input.nextDouble();
-    // System.out.print("Enter your first test score 2: ");
-    // double test2 = input.nextDouble();
-    // System.out.print("Enter your first test score 3: ");
-    // double test3 = input.nextDouble(); 
+        // System.out.print("Enter your first test score 1: ");
+        // double test1 = input.nextDouble();
+        // System.out.print("Enter your first test score 2: ");
+        // double test2 = input.nextDouble();
+        // System.out.print("Enter your first test score 3: ");
+        // double test3 = input.nextDouble(); 
 
-    // TestScores examGrade = new TestScores(test1, test2, test3);
+        // TestScores examGrade = new TestScores(test1, test2, test3);
 
-    // System.out.printf("Your exam average is %.2f", examGrade.getAverage());
+        // System.out.printf("Your exam average is %.2f", examGrade.getAverage());
 
     //*************************************************************************************************************
 
     //number 7
 
-    // Scanner input = new Scanner(System.in);
+        // Scanner input = new Scanner(System.in);
 
-    // System.out.print("What is the circles radius? ");
-    // double radius = input.nextDouble();
+        // System.out.print("What is the circles radius? ");
+        // double radius = input.nextDouble();
 
-    // Circle circleData = new Circle(radius);
+        // Circle circleData = new Circle(radius);
 
-    // displayCircleInformation(circleData);
+        // displayCircleInformation(circleData);
 
     //*************************************************************************************************************
 
     //number 8
 
-    Scanner input = new Scanner(System.in);
+        // Scanner input = new Scanner(System.in);
 
-    System.out.print("What is the temperature in fahrenheit? ");
-    double temp = input.nextDouble();
+        // System.out.print("What is the temperature in fahrenheit? ");
+        // double temp = input.nextDouble();
 
-    Temperature fahrenheit = new Temperature(temp);
+        // Temperature fahrenheit = new Temperature(temp);
 
-    displayCelsius(fahrenheit);
-    displayKelvin(fahrenheit);
+        // displayCelsius(fahrenheit);
+        // displayKelvin(fahrenheit);
+
+    //*************************************************************************************************************
+
+    //number 9
+
+        // Scanner input = new Scanner(System.in);
+        // int daysInMonth;
+
+        // System.out.print("Pick a month (1 - 12): ");
+        // int month = input.nextInt();
+        // System.out.print("Pick a year: ");
+        // int year = input.nextInt();
+
+        // MonthDays days = new MonthDays(month, year);
+
+        // int numDays = getDaysInMonth(days, month, year);
+
+        // displayDays(numDays, month, year);
+
+    //*************************************************************************************************************
+
+    //number 10
+
+        //come back to this since it will take a while to code
+
+    //*************************************************************************************************************
+
+    //number 11
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter a temperature: ");
+        double temperature = input.nextDouble();
+
+        Freezing_BoilingTemp getStatus = new Freezing_BoilingTemp(temperature);
+
+        getTempStatus(getStatus);
+
+        //come back too
+
+    //*************************************************************************************************************
+
+    //number 12
+        
+        
+
+
+    
+
+    
+
+
+
+    
+
 
 
     } //end of main method
+
+
 
 
 
@@ -205,6 +262,106 @@ public class Chapter6TextbookProblems {
         System.out.printf("The temperature in kelvin is %.2f\n", temp.getKelvin());
     }
 
+     //*************************************************************************************************************
+
+    //number 9
+
+    public static int getDaysInMonth(MonthDays days, int month, int year)
+    {
+        int daysInMonth = 0;
+
+        switch(month)
+    {
+        case 1: daysInMonth = 31;
+                break;
+        case 2: daysInMonth = days.numberOfDays();
+                break;        
+        case 3: daysInMonth = 31;
+                break;
+        case 4: daysInMonth = 30;
+                break;
+        case 5: daysInMonth = 31;
+                break;
+        case 6: daysInMonth = 30;
+                break;
+        case 7: daysInMonth = 31;
+                break;
+        case 8: daysInMonth = 31;
+                break;
+        case 9: daysInMonth = 30;
+                break;
+        case 10: daysInMonth = 31;
+                break;
+        case 11: daysInMonth = 30;
+                break;
+        case 12: daysInMonth = 31;
+                break;
+    }
+
+        return daysInMonth;
+    }
+
+    public static void displayDays(int days, int month, int year)
+    {
+        System.out.println("There are " + days + " days.");
+    }
+
+    //*************************************************************************************************************
+
+    //number 10
+        //come back to this since it will take a while to code
+
+
+    //*************************************************************************************************************
+
+    //number 11
+    
+    public static void getTempStatus(Freezing_BoilingTemp temp)
+    {
+
+        if (temp.isOxygenFreezing() == true)
+        {
+        System.out.println( "Oxygen will freeze");
+        System.out.println("Ethyl alcohol will freeze");
+        System.out.println("Water will freeze");
+        }
+        else if (temp.isOxygenFreezing() == true && temp.isOxygenBoiling() == true)
+        {
+            System.out.println( "Ethyl alcohol will freeze");
+            System.out.println( "Water will freeze");
+        }
+        else if (temp.isOxygenBoiling() == true && temp.isEthylFreezing() == true)
+        {
+            System.out.println("Ethyl alcohol will freeze");
+            System.out.println("Water will freeze");
+            System.out.println("Oxygen will boil");
+        }
+        else if (temp.isEthylFreezing() == true&& temp.isWaterFreezing() == true)
+        {
+            System.out.println( "Water will freeze");
+            System.out.println("Oxygen will boil");
+        }
+        else if (temp.isWaterFreezing() == true && temp.isEthylBoiling() == true)
+        {
+            System.out.println( "Oxygen will boil");
+        }
+        else if (temp.isEthylBoiling() == true && temp.isWaterBoiling() == true)
+        {
+            System.out.println("Ethyl alcohol will boil");
+            System.out.println( "Oxygen will boil");
+        }
+        else if (temp.isWaterBoiling() == true)
+        {
+            System.out.println( "Ethyl alcohol will boil");
+            System.out.println( "Water will boil");
+            System.out.println( "Oxygen will boil");
+        }
+        
+    }
+
+    //*************************************************************************************************************
+
+    //number 12
 
 
 }
