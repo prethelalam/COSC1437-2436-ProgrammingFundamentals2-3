@@ -1,7 +1,9 @@
+import java.io.IOException;
 import java.util.Scanner;
+import java.io.*;
 
 public class Chapter6TextbookProblems {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
     //number 1
 
@@ -151,24 +153,134 @@ public class Chapter6TextbookProblems {
 
     //number 11
 
-        Scanner input = new Scanner(System.in);
+        // Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter a temperature: ");
-        double temperature = input.nextDouble();
+        // System.out.println("Enter a temperature: ");
+        // double temperature = input.nextDouble();
 
-        Freezing_BoilingTemp getStatus = new Freezing_BoilingTemp(temperature);
+        // Freezing_BoilingTemp getStatus = new Freezing_BoilingTemp(temperature);
 
-        getTempStatus(getStatus);
+        // getTempStatus(getStatus);
 
         //come back too
 
     //*************************************************************************************************************
 
     //number 12
-        
+        // Scanner input = new Scanner(System.in);
+        // double depositAMT, withdrawAMT;
+        // double totalDeposit = 0, totalWithdraw = 0, totalInterest = 0;
+
+        // double startingBalance = getBalance();
+        // double interest = getInterestRate();
+        // int months = getMonths();
+
+        // SavingsAccount money = new SavingsAccount(startingBalance, interest);
+
+        // for (int i = 0; i < months; i++)
+        // {
+        //     System.out.print("How much did you deposit in month " + (i + 1) + "? $");
+        //     depositAMT = input.nextDouble();
+        //     money.SetDeposit(depositAMT);
+        //     totalDeposit += depositAMT;
+
+        //     System.out.print("How much did you withdraw in month " + (i + 1) + "? $");
+        //     withdrawAMT = input.nextDouble();
+        //     money.SetWithdraw(withdrawAMT);
+        //     totalWithdraw += withdrawAMT;
+        // }
+
+        // money.addInterest(interest);
+        // totalInterest = money.balance() - startingBalance;
+
+        // double totalMoney = money.balance();
+
+        // System.out.printf("Total ending balance is $%.2f\n", totalMoney);
+        // System.out.printf("Total deposits: $%.2f\n", totalDeposit);
+        // System.out.printf("Total withdraws: $%.2f\n", totalWithdraw);
+        // System.out.printf("Total interest earned: $%.2f\n", totalInterest);
+
+     //*************************************************************************************************************
+
+    //number 13 (extenstion of 12)
+        // Scanner input = new Scanner(System.in);
+
+        // double depositAMT = 0, withdrawAMT = 0;
+        // double totalDeposit = 0, totalWithdraw = 0, totalInterest = 0;
+        // double totalMoney = 0;
+
+        // double startingBalance = getBalance();
+        // double interest = getInterestRate();
         
 
+        // SavingsAccount money = new SavingsAccount(startingBalance, interest);
 
+        // //opening deposit file
+        // File depositFile = new File("Deposits.txt");
+        // Scanner inputFile = new Scanner(depositFile);
+
+        // //opening withdraw file
+        // File withdrawFile = new File("Withdraws.txt");
+        // Scanner inputFile2 = new Scanner(withdrawFile);
+
+        // while (inputFile.hasNext() && inputFile2.hasNext())
+        // {
+        //     depositAMT = inputFile.nextDouble();
+        //     money.SetDeposit(depositAMT);
+
+        //     withdrawAMT = inputFile2.nextDouble();
+        //     money.SetWithdraw(withdrawAMT);
+        // }
+
+        // totalMoney += money.balance();
+
+        // money.addInterest(interest);
+        // totalInterest = money.balance() - startingBalance;
+
+        // //close file
+        // inputFile.close();
+        // inputFile2.close();
+        
+
+        // System.out.printf("Total ending balance is $%.2f\n", totalMoney);
+        // System.out.printf("Total interest earned: $%.2f\n", totalInterest);
+
+    //*************************************************************************************************************
+
+    //number 14
+        
+        Patient patient1 = new Patient("Prethel Alam" , "1234 Marry Way" , "1234567891" , "Zeus Alam", "123-123-4567");
+
+        Procedure procedure1 = new Procedure("Physical Exam", "Todays Date", "Dr. Irvine", 250.00);
+
+        Procedure procedure2 = new Procedure("X-ray", "Todays Date", "Dr. Jamison", 500.00);
+
+        Procedure procedure3 = new Procedure("Blood test", "Todays Date", "Dr. Smith", 200.00);
+
+        System.out.println("Patient's name: " + patient1.getName());
+        System.out.println("Patient's address: " + patient1.getAddress());
+        System.out.println("Patient's phone number: " + patient1.getPhone());
+        System.out.println("Patient's emergency contact name: " + patient1.getEmergencyName());
+        System.out.println("Patient's emergency contact phone number: " + patient1.getEmergencyNumber());
+        System.out.println();
+        
+        System.out.println("Procedure #1\t\t\t\tProcedure #2\t\t\t\tProcedure #3");
+        System.out.println("----------------------------------------------------------------------------------------------------");
+        System.out.println("Procedure name: " + procedure1.getDate() 
+                        + "\t\t" + "Procedure name: " + procedure2.getDate() + "\t\t" + "Procedure name: " + procedure3.getDate());
+        System.out.println("Date: " + procedure1.getDate() 
+                        + "\t\t\t" + "Date: " + procedure2.getDate() + "\t\t\t" + "Date: " + procedure3.getDate());
+        System.out.println("Practioner: " + procedure1.getDoctorName() 
+                        + "\t\t\t" + "Practioner: " + procedure2.getDoctorName() + "\t\t\t" + "Practioner: " + procedure3.getDoctorName());
+        System.out.println("ChargeCharge: " + procedure1.getCost() 
+                        + "\t\t\t" + "Charge: " + procedure2.getCost() + "\t\t\t\t" + "Charge: " + procedure3.getCost());
+        System.out.println();
+        System.out.println("Total Charge for all 3 Procedures: $" + (procedure1.getCost() + procedure2.getCost() + procedure3.getCost()));
+
+    //*************************************************************************************************************
+
+    //number 15
+        
     
 
     
@@ -361,7 +473,41 @@ public class Chapter6TextbookProblems {
 
     //*************************************************************************************************************
 
-    //number 12
+    //number 12 and 13
+
+    public static double getBalance()
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("What is your starting balance: $");
+        double balance = input.nextDouble();
+
+        return balance;
+    }
+
+    public static double getInterestRate()
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("What is your interest rate: ");
+        double rate = input.nextDouble();
+
+        return rate;
+    }
+
+    public static int getMonths()
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("How many months have passed since the account was opened: ");
+        int numMonths = input.nextInt();
+
+        return numMonths;
+    }
+
+    //*************************************************************************************************************
+
+    //number 15
 
 
 }
