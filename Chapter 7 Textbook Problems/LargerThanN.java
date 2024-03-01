@@ -1,22 +1,24 @@
 public class LargerThanN {
     //method
-    public void getLargerThanN(int[] num, int[] n)
+    public void getLargerThanN(int[] num, int n) //sequential search (modified version)
     {
-        //int smallest = num[0]; 
-        int index;
+        int indexNum = 0;
         int i;
-        System.out.print("The numbers that are bigger than " + n + " are: ");
 
         for(i = 0; i < num.length; i++)
         {
-            if (n[0] < num[i])
+            if(num[i] > n)
             {
-                index = i;
+                indexNum = i;
+                break;
             }
         }
-        for(index = i; index < num.length; index++)
+
+        System.out.println("The numbers that are bigger than " + n + " are: ");
+
+        for(int j = indexNum; j < num.length; j++)
         {
-            System.out.println(num[index]);
+            System.out.println(num[j]);
         }
     }
 }

@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.*;
+import java.util.Random;
 
 
 public class Chapter7 {
@@ -132,23 +133,126 @@ public class Chapter7 {
     //*********************************************************************************
 
         //number 5
-        Scanner input = new Scanner(System.in);
-        LargerThanN num = new LargerThanN();
+        // Scanner input = new Scanner(System.in);
+        // LargerThanN num = new LargerThanN();
 
-        int[] numbers = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-        int[] decision = new int[1];
+        // int[] numbers = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        // int decision;
 
         
-        System.out.print("Enter a number between 1 and 100: ");
+        // System.out.print("Enter a number between 1 and 100: ");
+        
+        // decision = input.nextInt();
+        
+        // num.getLargerThanN(numbers, decision);
 
-        for(int i = 0; i < decision.length; i++)
+    //*********************************************************************************
+
+        //number 6
+    //     Scanner scanner = new Scanner(System.in);
+    //     DriverExam exam = new DriverExam();
+    //     char[] studentsResponse = new char[20];
+    //     int i;
+
+    //     System.out.println("Enter your answers for the exam (in all caps):");
+    //     char answer = ' ';
+
+    //     for (i = 0; i < 20; i++) 
+    //     {
+    //         System.out.print((i + 1) + ". ");
+    //         boolean validInput = false;
+        
+    //         //Loop until valid input is provided
+    //         while (!validInput) 
+    //         {
+    //             String input = scanner.nextLine();
+
+    //             if (input.length() == 1 && "ABCD".indexOf(input.charAt(0)) != -1) 
+    //             {
+    //                 //Input is a single character and is A, B, C, or D
+    //                 answer = input.charAt(0);
+    //                 validInput = true;
+    //             } 
+    //             else 
+    //             {
+    //                 //Invalid input, prompt the user to re-enter
+    //                 System.out.println("Invalid input. Please enter A, B, C, or D:");
+    //             }
+    //         }
+        
+    //         studentsResponse[i] = answer;
+    //         exam.setStudentAnswers(studentsResponse, i);
+    //     }
+
+    //     //check to see if student passed or not
+    //     System.out.println("The student passed the exam: " + exam.passed());
+
+    //     //total Correct
+    //     System.out.println("The student got " + exam.totalCorrect() + " questions correct");
+
+    //     //total incorrect
+    //     System.out.println("The student got " + exam.totalIncorrect() + " questions incorrect");
+
+    //     //pass incorrect amount to questionsMissed method
+    //     System.out.println("The questions the student missed were: ");
+
+    //     int totalIncorrect = exam.totalIncorrect();
+
+    //     for(int j = 0; j < totalIncorrect; j++)
+    //     {
+    //         System.out.println(exam.questionsMissed(totalIncorrect)[j]);
+    //     }
+    // 
+
+    //*********************************************************************************
+
+        //number 8
+        Scanner scanner = new Scanner(System.in);
+        Random randomNum = new Random();
+
+        // 1. read responses from text file into an array or arrayList
+
+        String[] ballResponses = new String[12];
+
+        //open the file
+
+        File myFile = new File("8_ball_responses.txt");
+        Scanner inputFile = new Scanner(myFile);
+
+        //Read the first line from the file to an array
+
+        for(int i = 0; i < ballResponses.length; i++)
         {
-            decision[0] = input.nextInt();
+            ballResponses[i] = inputFile.nextLine();
         }
 
-        num.getLargerThanN(numbers, decision);
+        inputFile.close();
 
+        // 2. prompt user to ask a question
 
-        //come back too
+        String question = "";
+
+        // 3. display one of the responses (should be randomly generated)
+        // 4. program repeats until user is ready to quit
+
+        while (!question.equals("quit"))
+        {
+            int number = randomNum.nextInt(12);
+
+            System.out.println("Ask any question that is on your mind.");
+            System.out.println("When you are done asking questions, enter the word quit.");
+            question = scanner.nextLine();
+
+            if(question.equals("quit"))
+            {
+                break;
+            }
+
+            System.out.println(ballResponses[number] + "\n");
+        }
+
+        
+        
+        
     }
 }
