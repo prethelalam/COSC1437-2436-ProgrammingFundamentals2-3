@@ -7,206 +7,205 @@ public class Chapter7 {
     public static void main(String[] args) throws IOException {
         
         // number 1
+        Scanner input = new Scanner(System.in);
+        Rainfall rainfall = new Rainfall(); //created rainfall object
 
-        // Scanner input = new Scanner(System.in);
-        // Rainfall rainfall = new Rainfall(); //created rainfall object
+        for (int i = 0; i < 12; i++)
+        {
+            System.out.print("Enter the total rainfall for month " + (i + 1) + " (in inches): ");
+            double rainAmt = input.nextDouble();
 
-        // for (int i = 0; i < 12; i++)
-        // {
-        //     System.out.print("Enter the total rainfall for month " + (i + 1) + " (in inches): ");
-        //     double rainAmt = input.nextDouble();
+            rainfall.setMonthlyRainFall(i + 1, rainAmt);
+        }
+        rainfall.displayInformation();
 
-        //     rainfall.setMonthlyRainFall(i + 1, rainAmt);
-        // }
-        // rainfall.displayInformation();
     //*********************************************************************************
 
         //number 2
+        Scanner input = new Scanner(System.in);
+        Payroll2 payInfo = new Payroll2();
+        double payAMT;
+        int hoursWorked;
 
-        // Scanner input = new Scanner(System.in);
-        // Payroll2 payInfo = new Payroll2();
-        // double payAMT;
-        // int hoursWorked;
+        for (int i = 0; i < 7; i++)
+        {
+            do 
+            {
+                System.out.print("Enter the pay rate for employee " + payInfo.displayEmployeeID(i) + ": ");
 
-        // for (int i = 0; i < 7; i++)
-        // {
-        //     do 
-        //     {
-        //         System.out.print("Enter the pay rate for employee " + payInfo.displayEmployeeID(i) + ": ");
-
-        //         payAMT = input.nextDouble();
-        //     } while(payAMT < 6.00);
+                payAMT = input.nextDouble();
+            } while(payAMT < 6.00);
             
-        //     payInfo.setPayRate(payAMT, i);
+            payInfo.setPayRate(payAMT, i);
 
-        //     do 
-        //     {
-        //         System.out.print("Enter the amount of hours worked by employee " + payInfo.displayEmployeeID(i) + ": ");
+            do 
+            {
+                System.out.print("Enter the amount of hours worked by employee " + payInfo.displayEmployeeID(i) + ": ");
 
-        //         hoursWorked = input.nextInt();
-        //     }while(hoursWorked < 0);
+                hoursWorked = input.nextInt();
+            }while(hoursWorked < 0);
             
-        //     payInfo.setHours(hoursWorked, i);
-        // }
+            payInfo.setHours(hoursWorked, i);
+        }
 
-        // //have another for loop to display everything right here
-        // System.out.print("Employee ID Number\t\tGross Pay\n");
+        //have another for loop to display everything right here
+        System.out.print("Employee ID Number\t\tGross Pay\n");
 
-        // for(int i = 0; i < 7; i++)
-        // {
-        //     System.out.print(payInfo.displayEmployeeID(i));
-        //     System.out.printf("\t\t\t\t%.2f\n", payInfo.calcGrossPay(i));
-        // }
+        for(int i = 0; i < 7; i++)
+        {
+            System.out.print(payInfo.displayEmployeeID(i));
+            System.out.printf("\t\t\t\t%.2f\n", payInfo.calcGrossPay(i));
+        }
 
     //*********************************************************************************
 
         //number 3
-        // Scanner input = new Scanner(System.in);
-        // ChargeAccountValidation account = new ChargeAccountValidation();
-        // boolean status;
+        Scanner input = new Scanner(System.in);
+        ChargeAccountValidation account = new ChargeAccountValidation();
+        boolean status;
 
-        // System.out.print("Enter a charge account number that is 7 digits long: ");
-        // int number = input.nextInt();
+        System.out.print("Enter a charge account number that is 7 digits long: ");
+        int number = input.nextInt();
 
-        // status = account.sequentialSearch(number);
+        status = account.sequentialSearch(number);
 
-        // if (status)
-        // {
-        //     System.out.print("Number is valid");
-        // }
-        // else
-        // {
-        //     System.out.print("Number is invalid");
-        // }
+        if (status)
+        {
+            System.out.print("Number is valid");
+        }
+        else
+        {
+            System.out.print("Number is invalid");
+        }
         
     //*********************************************************************************
 
         //number 4  
 
-        // Scanner input = new Scanner(System.in);
-        // AccountValidation account = new AccountValidation();
-        // boolean status = false;
-        // int index = 0;
-        // int[] accountNums = {5658845, 4520125, 7895122, 8777541, 8451277, 1302850,
-        //                     8080152, 4562555, 5552012, 5050552, 7825877, 1250255,
-        //                     1005231, 6545231, 3852085, 7576651, 7881200, 4581002};
+        Scanner input = new Scanner(System.in);
+        AccountValidation account = new AccountValidation();
+        boolean status = false;
+        int index = 0;
+        int[] accountNums = {5658845, 4520125, 7895122, 8777541, 8451277, 1302850,
+                            8080152, 4562555, 5552012, 5050552, 7825877, 1250255,
+                            1005231, 6545231, 3852085, 7576651, 7881200, 4581002};
 
-        // File textFile = new File("AccountNumbers.txt");
+        File textFile = new File("AccountNumbers.txt");
 
-        // try(PrintWriter outputFile = new PrintWriter(textFile))
-        // {
-        //     for(int i = 0; i < accountNums.length; i++)
-        //     {
-        //         outputFile.println(accountNums[i]);
-        //     }
-        // }
+        try(PrintWriter outputFile = new PrintWriter(textFile))
+        {
+            for(int i = 0; i < accountNums.length; i++)
+            {
+                outputFile.println(accountNums[i]);
+            }
+        }
 
-        // System.out.print("Enter a charge account number that is 7 digits long: ");
-        // int number = input.nextInt();
+        System.out.print("Enter a charge account number that is 7 digits long: ");
+        int number = input.nextInt();
 
-        // if(textFile.exists())
-        // {   
-        //     Scanner inputFile = new Scanner(textFile);
+        if(textFile.exists())
+        {   
+            Scanner inputFile = new Scanner(textFile);
 
-        //     while(inputFile.hasNextInt() && index < accountNums.length)
-        //     {
-        //         status = account.sequentialSearch2(number);
+            while(inputFile.hasNextInt() && index < accountNums.length)
+            {
+                status = account.sequentialSearch2(number);
 
-        //             if (status)
-        //             {
-        //                 System.out.print("Number is valid");
-        //                 break;
-        //             }
-        //             else
-        //             {
-        //                 System.out.print("Number is invalid");
-        //                 index++;
-        //                 break;
-        //             }
-        //     }
-        // }
-        // else
-        // {
-        //     System.out.print("Text file does not exist");
-        // }
+                    if (status)
+                    {
+                        System.out.print("Number is valid");
+                        break;
+                    }
+                    else
+                    {
+                        System.out.print("Number is invalid");
+                        index++;
+                        break;
+                    }
+            }
+        }
+        else
+        {
+            System.out.print("Text file does not exist");
+        }
     
     //*********************************************************************************
 
         //number 5
-        // Scanner input = new Scanner(System.in);
-        // LargerThanN num = new LargerThanN();
+        Scanner input = new Scanner(System.in);
+        LargerThanN num = new LargerThanN();
 
-        // int[] numbers = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-        // int decision;
+        int[] numbers = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int decision;
 
         
-        // System.out.print("Enter a number between 1 and 100: ");
+        System.out.print("Enter a number between 1 and 100: ");
         
-        // decision = input.nextInt();
+        decision = input.nextInt();
         
-        // num.getLargerThanN(numbers, decision);
+        num.getLargerThanN(numbers, decision);
 
     //*********************************************************************************
 
         //number 6
-    //     Scanner scanner = new Scanner(System.in);
-    //     DriverExam exam = new DriverExam();
-    //     char[] studentsResponse = new char[20];
-    //     int i;
+        Scanner scanner = new Scanner(System.in);
+        DriverExam exam = new DriverExam();
+        char[] studentsResponse = new char[20];
+        int i;
 
-    //     System.out.println("Enter your answers for the exam (in all caps):");
-    //     char answer = ' ';
+        System.out.println("Enter your answers for the exam (in all caps):");
+        char answer = ' ';
 
-    //     for (i = 0; i < 20; i++) 
-    //     {
-    //         System.out.print((i + 1) + ". ");
-    //         boolean validInput = false;
+        for (i = 0; i < 20; i++) 
+        {
+            System.out.print((i + 1) + ". ");
+            boolean validInput = false;
         
-    //         //Loop until valid input is provided
-    //         while (!validInput) 
-    //         {
-    //             String input = scanner.nextLine();
+            //Loop until valid input is provided
+            while (!validInput) 
+            {
+                String input = scanner.nextLine();
 
-    //             if (input.length() == 1 && "ABCD".indexOf(input.charAt(0)) != -1) 
-    //             {
-    //                 //Input is a single character and is A, B, C, or D
-    //                 answer = input.charAt(0);
-    //                 validInput = true;
-    //             } 
-    //             else 
-    //             {
-    //                 //Invalid input, prompt the user to re-enter
-    //                 System.out.println("Invalid input. Please enter A, B, C, or D:");
-    //             }
-    //         }
+                if (input.length() == 1 && "ABCD".indexOf(input.charAt(0)) != -1) 
+                {
+                    //Input is a single character and is A, B, C, or D
+                    answer = input.charAt(0);
+                    validInput = true;
+                } 
+                else 
+                {
+                    //Invalid input, prompt the user to re-enter
+                    System.out.println("Invalid input. Please enter A, B, C, or D:");
+                }
+            }
         
-    //         studentsResponse[i] = answer;
-    //         exam.setStudentAnswers(studentsResponse, i);
-    //     }
+            studentsResponse[i] = answer;
+            exam.setStudentAnswers(studentsResponse, i);
+        }
 
-    //     //check to see if student passed or not
-    //     System.out.println("The student passed the exam: " + exam.passed());
+        //check to see if student passed or not
+        System.out.println("The student passed the exam: " + exam.passed());
 
-    //     //total Correct
-    //     System.out.println("The student got " + exam.totalCorrect() + " questions correct");
+        //total Correct
+        System.out.println("The student got " + exam.totalCorrect() + " questions correct");
 
-    //     //total incorrect
-    //     System.out.println("The student got " + exam.totalIncorrect() + " questions incorrect");
+        //total incorrect
+        System.out.println("The student got " + exam.totalIncorrect() + " questions incorrect");
 
-    //     //pass incorrect amount to questionsMissed method
-    //     System.out.println("The questions the student missed were: ");
+        //pass incorrect amount to questionsMissed method
+        System.out.println("The questions the student missed were: ");
 
-    //     int totalIncorrect = exam.totalIncorrect();
+        int totalIncorrect = exam.totalIncorrect();
 
-    //     for(int j = 0; j < totalIncorrect; j++)
-    //     {
-    //         System.out.println(exam.questionsMissed(totalIncorrect)[j]);
-    //     }
-    // 
+        for(int j = 0; j < totalIncorrect; j++)
+        {
+            System.out.println(exam.questionsMissed(totalIncorrect)[j]);
+        }
+    
 
     //*********************************************************************************
 
-        //number 8
+        //number 7
         Scanner scanner = new Scanner(System.in);
         Random randomNum = new Random();
 
@@ -251,8 +250,89 @@ public class Chapter7 {
             System.out.println(ballResponses[number] + "\n");
         }
 
-        
-        
-        
+    //*********************************************************************************
+
+        //number 8
+        Scanner scanner = new Scanner(System.in);
+        GradeBook book = new GradeBook();
+        String name;
+        double score;
+
+        //allow user to enter each students name and test scores
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.print("Enter student " + (i + 1) + " name. Then press enter: ");
+            name = scanner.nextLine();
+
+            book.setNames(name, i);
+
+            for(int j = 0; j < 4; j++)
+            {
+                System.out.print("Enter student " + (i + 1) + " test score.\n");
+                System.out.print("Test " + (j + 1) + ": ");
+
+                score = scanner.nextDouble();
+
+                while(score < 0 || score > 100)
+                {
+                    System.out.print("Enter a valid test score: ");
+                    score = scanner.nextDouble();
+                }
+
+                book.setStudentScore(score, j, i);
+                scanner.nextLine();
+            }
+        }
+
+        //display student average test score and letter grade
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.print("Student Name: " + book.getNames(i) + "\n");
+            System.out.print("Test Average: " + book.getTestAvg(i) + "\n");
+            System.out.print("Letter grade: " + book.getLetterGrade(book.getTestAvg(i)) + "\n\n");
+        }
+
+
+    //*********************************************************************************
+
+        //number 9 
+        Scanner scanner = new Scanner(System.in);
+        GradeBook2 book = new GradeBook2();
+        String name;
+        double score;
+
+        //allow user to enter each students name and test scores
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.print("Enter student " + (i + 1) + " name. Then press enter: ");
+            name = scanner.nextLine();
+
+            book.setNames(name, i);
+
+            for(int j = 0; j < 4; j++)
+            {
+                System.out.print("Enter student " + (i + 1) + " test score.\n");
+                System.out.print("Test " + (j + 1) + ": ");
+
+                score = scanner.nextDouble();
+
+                while(score < 0 || score > 100)
+                {
+                    System.out.print("Enter a valid test score: ");
+                    score = scanner.nextDouble();
+                }
+
+                book.setStudentScore(score, j, i);
+                scanner.nextLine();
+            }
+        }
+
+        //display student average test score and letter grade
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.print("Student Name: " + book.getNames(i) + "\n");
+            System.out.print("Test Average: " + book.getTestAvg(i) + "\n");
+            System.out.print("Letter grade: " + book.getLetterGrade(book.getTestAvg(i)) + "\n\n");
+        }
     }
 }
