@@ -1,7 +1,7 @@
 public class GenericObjectInsertionSorter {
     // In Programming Challenge 1 of Chapter 16 you wrote an ObjectInsertionSorter class that can sort Comparable objects. Modify the sorting method so it is a generic method. The method should use generic notation to accept an array of any objects that implement the Comparable interface. Demonstrate the class in an application.
 
-    public static <T extends Comparable<T>> void insertionSorter(T[] array)
+    public <T extends Comparable<T>> void insertionSorter(T[] array)
     {
         T unsortedValue;
         int scan;
